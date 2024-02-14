@@ -1,6 +1,6 @@
-import { mergeAnonymousCartIntoUserCart } from "@/lib/db/cart";
-import { prisma } from "@/lib/db/prisma";
-import { env } from "@/lib/env";
+import { mergeAnonymousCartIntoUserCart } from "@/src/lib/db/cart";
+import { prisma } from "@/src/lib/db/prisma";
+import { env } from "@/src/lib/env";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { NextAuthOptions } from "next-auth";
 import { Adapter } from "next-auth/adapters";

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/src/components/Navbar/Navbar";
+import Footer from "@/src/components/Footer";
 import SessionProvider from "../components/SessionProvider";
+import { Providers } from "../providers/providers";
+import { lazy } from "react";
+const NextThemeProvider = lazy(() => import("@/src/providers/theme-provider"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-base-200">
+    <html lang="en">
       <body className={inter.className}>
-        <SessionProvider>
-      <Navbar />
-       <main className="p-4 mb-[7px] max-w-7xl m-auto min-w-[300px]">
-          {children}
-          </main>
+        {/* <NextThemeProvider> */}
+          <Navbar />
+          <Providers>
+            <SessionProvider>{children}</SessionProvider>
+          </Providers>
           <Footer />
-          </SessionProvider>
+        {/* </NextThemeProvider> */}
       </body>
     </html>
   );

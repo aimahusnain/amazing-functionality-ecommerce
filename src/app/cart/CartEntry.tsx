@@ -1,7 +1,7 @@
 "use client";
 
-import { CartItemWithProduct } from "@/lib/db/cart";
-import { formatPrice } from "@/lib/format";
+import { CartItemWithProduct } from "@/src/lib/db/cart";
+import { formatPrice } from "@/src/lib/format";
 import Image from "next/image";
 import Link from "next/link";
 import { useTransition } from "react";

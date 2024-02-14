@@ -1,12 +1,13 @@
-import logo from "@/assets/logo.png";
-import { getCart } from "@/lib/db/cart";
+import logo from "@/src/assets/logo.png";
+import { getCart } from "@/src/lib/db/cart";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { authOptions } from "@/lib/auth";
+import { authOptions } from "@/src/lib/auth";
 import ShoppingCartButton from "./ShoppingCartButton";
 import UserMenuButton from "./UserMenuButton";
+import ThemeToggler from "../themes/ThemeToggler";
 
 async function searchProducts(formData: FormData) {
   "use server";
@@ -41,6 +42,7 @@ export default async function Navbar() {
               />
             </div>
           </form>
+          <ThemeToggler />
           <ShoppingCartButton cart={cart} />
           <UserMenuButton session={session} />
         </div>

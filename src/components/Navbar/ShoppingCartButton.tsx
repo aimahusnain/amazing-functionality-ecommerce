@@ -1,7 +1,7 @@
 "use client";
 
-import { ShoppingCart } from "@/lib/db/cart";
-import { formatPrice } from "@/lib/format";
+import { ShoppingCart } from "@/src/lib/db/cart";
+import { formatPrice } from "@/src/lib/format";
 import Link from "next/link";
 
 interface ShoppingCartButtonProps {
